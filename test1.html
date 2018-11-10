@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Тест- "Я и мой ребенок"</title>
+    <link rel="icon" href="img/icon.jpg" type="image/gif" sizes="16x16">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="CSS/test1.css" />
+    
+
+<meta property="og:title" content="Тест-Я и мой ребенок"/>
+<meta property="og:site_name" content="White Room"/>
+<meta property="og:url" content="http://minamotors.000webhostapp.com"/>
+<meta property="og:description" content="Пройди тест и узнай какой ты родитель"/>
+<meta property="og:image" content="http://psychologsaratov.ru/wp-content/uploads/2018/11/WR2-300x160.jpg"/>
+
+
+<SCRIPT LANGUAGE="JavaScript">
+        document.ondragstart = test;
+        //запрет на перетаскивание
+        document.onselectstart = test;
+        //запрет на выделение элементов страницы
+        document.oncontextmenu = test;
+        //запрет на выведение контекстного меню
+        function test() {
+        return false
+        }
+</SCRIPT> 
+
+
+</head>:<META HTTP-EQUIV=Cache-Control content=no-cache> 
+
+<body>
+
+<div id="page-preloader" class="preloader">
+    <div class="loader">
+       
+    </div>
+</div>
+                            
+
+    
+<div class="wraper">
+
+
+
+<div class="heavy1">
+        <img src="img/logo-new.jpg" class="logo">
+               
+</div>
+
+<div class="heavy2">
+        <h1>Тест для родителей <span>«Я и мой ребенок»</span></h1>
+        
+</div>
+
+
+
+<div class="light1">
+        <img src="img/WR1.jpg"  class="round1">
+        <p class="p1">Эффективное <br> родительство</p>
+      
+        
+</div>
+
+<div class="light2">
+
+        <h2 class="two">Можете ли Вы?</h2>
+        <h3 id="quest"> </h3>
+<div>
+<select id = "answ">
+   <option disabled selected>Выберите ОТВЕТ</option>
+   <option value= "1">Немогу</option>
+   <option value= "2">Могу, но не всегда так поступаю</option>
+   <option value= "3">Могу и всегда так поступаю</option>
+</select>
+</div>
+<br>
+<br>
+
+<strong id="res"></strong>
+        
+        
+</div>
+
+
+
+
+
+<div class="light1">
+        <img src="img/WR2.jpg"  class="round2">    
+</div>
+
+
+
+<div class="light2">
+
+<h6>Created by Kravtsov Vitaly 2018 year, special for psychologies center "WHITE ROOM"</h6>     
+        
+</div>
+
+
+
+
+
+
+
+<script>
+        var question = ["В любой момент оставить все свои дела и заняться ребенком?",
+        "Посоветоваться с ребенком, невзирая на его возраст?",
+        "Признаться ребенку в ошибке, совершенной по отношению к нему?",
+        "Извиниться перед ребенком в случае своей неправоты?",
+        "Сохранить самообладание, даже если поступок ребенка вывел Вас из себя?",
+        "Поставить себя на место ребенка?",
+        "Поверить хотя бы на минуту, что Вы добрая фея (прекрасный принц)?",
+        "Рассказать ребенку поучительный случай из детства, представляющий Вас в невыгодном свете?",
+        "Всегда воздерживаться от употребления слов и выражений, которые могут ранить ребенка?",
+        "Пообещать ребенку исполнить его желание за хорошее поведение?",
+        "Выделить ребенку один день, когда он может делать, что желает, вести себя как хочет, ни во что не вмешиваться?",
+        "Не прореагировать, если Ваш ребенок ударил, грубо толкнул или просто незаслуженно обидел другого ребенка?",
+        "Устоять против детских просьб и слез, если уверены, что это каприз, мимолетная прихоть?"],
+              result = 0,
+              i = 0;
+        quest.innerHTML = (i + 1) + ". " + question[i];
+               
+        answ.onchange = function() {
+           result += +answ.value;
+           if( i < question.length - 1) {
+                answ.options[answ.options.selectedIndex].setAttribute("selected","");
+                i++;
+                quest.innerHTML = (i + 1) + ". " + question[i];
+                answ.options[0].setAttribute("selected","selected");
+                answ.value = answ.options[0].text;
+           }
+           else  {
+               if(result > 1)    res.innerHTML = /*result +*/ "РЕЗУЛЬТАТ: У Вас серьезные проблемы с воспитанием ребенка. Вам недостает либо знания, как сделать ребенка личностью, либо желания добиться этого, а возможно, того и другого. Советуем обратиться к помощи специалистов педагогов и психологов, познакомиться с публикациями по вопросам семейного воспитания.";
+               if(result > 15)   res.innerHTML = /*result + */"РЕЗУЛЬТАТ: Забота о ребенке для Вас вопрос первостепенной важности. Вы обладаете способностями воспитателя, но на практике не всегда применяете их последовательно и целенаправленно. Порой Вы чересчур строги, в других случаях излишне мягки; кроме того, Вы склонны к компромиссам, которые ослабляют воспитательный эффект. Вам следует задуматься над своим подходом к воспитанию ребенка.";
+               if(result >= 30)  res.innerHTML = /*result +*/ "РЕЗУЛЬТАТ: Ребенок самая большая ценность в Вашей жизни. Вы стремитесь не только понять, но и узнать его, относитесь к нему с уважением, придерживаетесь прогрессивных принципов воспитания и постоянной линии поведения. Другими словами, Вы действуете правильно и можете надеяться на хорошие результаты.";
+               
+           }
+        }
+         
+         
+        </script>
+
+
+
+
+    
+
+</div>
+
+
+
+ <script src="JS/preloader.js"></script>   
+ 
+ 
+ 
+
+
+</body>
+</html>
